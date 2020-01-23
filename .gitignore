@@ -1,0 +1,13 @@
+# env
+/env/
+
+# vscode
+/.vscode/
+
+# python
+*.pyc
+__pycache__
+
+# web site
+staticfiles
+db.sqlite3
