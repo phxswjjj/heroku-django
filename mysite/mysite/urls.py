@@ -25,4 +25,4 @@ urlpatterns = [
     path('', hello_world),
     path('admin/', admin.site.urls),
     url('^hello/$', hello_world),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
