@@ -11,4 +11,3 @@ __pycache__
 # web site
 staticfiles
 db.sqlite3
-mysite/trips/migrations/
