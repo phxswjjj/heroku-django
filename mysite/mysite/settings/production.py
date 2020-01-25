@@ -1,5 +1,14 @@
 
+import dj_database_url
+
 from .base import *
+
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
+DATABASES = {
+    'default': dj_database_url.config()
+}
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
