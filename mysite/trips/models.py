@@ -6,7 +6,6 @@ from datetime import datetime
 
 
 class PostTime(models.Model):
-    id = models.BigIntegerField(primary_key = True)
     time_start = models.TimeField()
     time_keep_hour = models.DecimalField(max_digits=2, decimal_places=1)
 
@@ -15,7 +14,6 @@ class PostTime(models.Model):
 
 
 class PostLocation(models.Model):
-    id = models.BigIntegerField(primary_key = True)
     location = models.CharField(max_length=100)
 
     def __str__(self):
@@ -23,7 +21,6 @@ class PostLocation(models.Model):
 
 
 class PostLocationTimeShip(models.Model):
-    id = models.BigIntegerField(primary_key = True)
     location = models.ForeignKey(PostLocation, on_delete=models.CASCADE)
     time = models.ForeignKey(PostTime, on_delete=models.CASCADE)
 
@@ -37,7 +34,6 @@ class User(models.Model):
         ('GUEST', '球友')
     )
 
-    id = models.BigIntegerField(primary_key = True)
     name = models.CharField(max_length=3)
     user_type = models.CharField(
         max_length=5, choices=USER_TYPE_CHOICE, default=USER_TYPE_CHOICE[0][0], verbose_name='身份')
@@ -49,7 +45,6 @@ class User(models.Model):
 
 
 class Post(models.Model):
-    id = models.BigIntegerField(primary_key = True)
     schedule_at = models.DateField(verbose_name='活動日期')
     location_time = models.ForeignKey(
         PostLocationTimeShip, related_name='posts', on_delete=models.CASCADE, verbose_name='活動時間')
